@@ -6,3 +6,8 @@ env:
 
 update:	env
 	. env/bin/activate; pip install -r requirements.txt
+lint:
+	pylint --generate-rcfile >> pylintrc
+
+test:	lint
+	pytest -vv test 
